@@ -1,5 +1,5 @@
 import 'mixpanel.dart';
-import 'profile.dart';
+import 'product.dart';
 import 'package:flutter/material.dart';
 import 'package:mixpanel_flutter/mixpanel_flutter.dart';
 import 'package:google_tag_manager/google_tag_manager.dart' as gtm;
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomeScreen(),
-        '/profile': (context) => ProfileScreen()
+        '/product': (context) => ProductScreen()
       },
     );
   }
@@ -50,16 +50,27 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('Story'),
       ),
       body: Center(
         child: TextButton(
           style: null,
-          child: Text('Go to Profile'),
+          child: Text('Go to PRODUCT'),
           onPressed: () {
-            gtm.pushEvent('click_profile_button_at_HOME');
-            mixpanel.track("[Home Screen] - Pressed Profile Screen Button");
-            Navigator.pushNamed(context, '/profile');
+            // 적용 예시입니다.
+            gtm.pushEvent('main_click_product', data: {
+              "from_screen": "STORY",
+              "from_url": "https://magicplus.skmagic.com",
+              "to_screen": "PRODUCT",
+              "to_url": "https://magicplus.skmagic.com"
+            });
+            mixpanel.track("[MAIN] PRODUCT 클릭", properties: {
+              "from_screen": "STORY",
+              "from_url": "https://magicplus.skmagic.com",
+              "to_screen": "PRODUCT",
+              "to_url": "https://magicplus.skmagic.com"
+            });
+            Navigator.pushNamed(context, '/product');
           },
         ),
       ),

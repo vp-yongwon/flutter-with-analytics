@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <base href="$FLUTTER_BASE_HREF">
+  <base href="$FLUTTER_BASE_HREF">
 
-    <meta charset="UTF-8">
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <meta name="description" content="A new Flutter project.">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
 
-    <!-- iOS meta tags & icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="analytics_sample">
-    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="analytics_sample">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png"/>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
 
-    <title>analytics_sample</title>
-    <link rel="manifest" href="manifest.json">
+  <title>analytics_sample</title>
+  <link rel="manifest" href="manifest.json">
 
-    <script>
-        // The value below is injected by flutter build, do not touch.
-        var serviceWorkerVersion = null;
-    </script>
+  <script>
+      // The value below is injected by flutter build, do not touch.
+      var serviceWorkerVersion = null;
+  </script>
 
-    <script src="./assets/packages/mixpanel_flutter/assets/mixpanel.js"></script>
+  <script src="./assets/packages/mixpanel_flutter/assets/mixpanel.js"></script>
 
-    <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-TCGH7RH');</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SG51JQJCCD"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+      gtag('config', 'G-SG51JQJCCD');
+  </script>
+  <!-- End Google tag (gtag.js) -->
+  <!-- Google Tag Manager -->
+  <script type="text/javascript">
+      (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+          w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+          var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-W8VR2S6');
+  </script>
+  <!-- End Google Tag Manager -->
 
-    <script src="flutter.js" defer></script>
+
+
+  <script src="flutter.js" defer></script>
 </head>
 <body>
 <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCGH7RH"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8VR2S6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <script>
     window.addEventListener('load', function (ev) {
